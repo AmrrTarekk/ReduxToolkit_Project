@@ -1,8 +1,8 @@
 import React from "react";
 import "./SideBar.css";
-
-function SideBar(props) {
-  const { name, isChanged } = props;
+import { useSelector } from "react-redux";
+function SideBar() {
+  const { name, email } = useSelector((state) => state.user);
   return (
     <div className="sidebar">
       <ul>
@@ -19,7 +19,8 @@ function SideBar(props) {
           <a href="#">Blog</a>
         </li>
         <li>
-          <a href="#">Hello {isChanged && name}</a>
+          <a href="#">Hello {name}</a>
+          <a href="#"> {email}</a>
         </li>
       </ul>
     </div>

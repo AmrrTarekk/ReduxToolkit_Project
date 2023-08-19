@@ -1,12 +1,14 @@
 import React from "react";
 import "./Header.css";
+import { useDispatch, useSelector } from "react-redux";
 
-function Header(props) {
-  const { name, isChanged } = props;
+function Header() {
+  const { name } = useSelector((state) => state.user);
+
   return (
     <div className="header">
       <h1>Redux Project</h1>
-      <p>Hello {isChanged && name}</p>
+      <p>Hello {name}</p>
     </div>
   );
 }

@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../Redux/userSlice";
 
-function Form(props) {
-  const { setName, setEmail, addUser } = props;
+function Form() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addUser({ name, email }));
+  };
+
   return (
-    <form onSubmit={addUser}>
+    <form onSubmit={handleSubmit}>
       <div className="form-group">
         <input
           type="text"
