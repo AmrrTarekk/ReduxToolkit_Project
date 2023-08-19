@@ -1,0 +1,24 @@
+form {
+    flex: 1;
+    padding: 10px;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+form input {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 3px;
+    height: 40px;
+}
+
+form input[type=submit]{
+    cursor: pointer;
+    background-color: brown;
+    color: white;
+    border: 0;
+}
