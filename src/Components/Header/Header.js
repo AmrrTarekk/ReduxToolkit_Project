@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Header() {
   const { userData } = useSelector((state) => state.user);

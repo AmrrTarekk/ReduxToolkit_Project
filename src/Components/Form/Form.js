@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./Form.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../../Redux/userSlice";
-import { fetchUser } from "../../Redux/api";
+import { fetchUserTK } from "../../Redux/userSlice";
 
 function Form() {
   const [name, setName] = useState("");
@@ -14,7 +13,8 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // dispatch(addUser({ name, email }));
-    fetchUser({ name, email }, dispatch);
+    // fetchUser({ name, email }, dispatch);
+    dispatch(fetchUserTK({ name, email }));
   };
 
   return (
